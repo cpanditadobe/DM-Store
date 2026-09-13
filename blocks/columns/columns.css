@@ -20,6 +20,18 @@
   border-radius: 4px;
 }
 
+/* fixed-height variant — uniform row height set via --row-height in JS */
+.columns.fixed-height > div {
+  height: var(--row-height);
+  overflow: hidden;
+}
+
+/* parallax variant — image columns clip the over-scrolled image */
+.columns.parallax .image-col {
+  overflow: hidden;
+  height: var(--row-height);
+}
+
 /* DMart green accents — plain links only, not buttons */
 .columns a:any-link:not(.button) {
   color: var(--brand-primary);
@@ -114,4 +126,21 @@
   .columns.categories > div {
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   }
+}
+
+/* parallax images fill the row at a uniform height, taller than the row so
+   the parallax translate has travel room without revealing gaps */
+.columns.parallax .image-col picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.columns.parallax .image-col img {
+  display: block;
+  width: 100%;
+  height: 160%;
+  object-fit: cover;
+  will-change: transform;
+  transition: transform 0.1s linear;
 }
