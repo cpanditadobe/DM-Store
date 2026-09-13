@@ -142,7 +142,7 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 /* brand */
 header .nav-brand {
   grid-area: brand;
-  flex-basis: 128px;
+  flex-basis: 140px;
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
@@ -151,6 +151,19 @@ header .nav-brand {
 header nav .nav-brand img {
   width: 128px;
   height: auto;
+}
+
+/* DMart logo — replace brand text link with the logo image */
+header nav .nav-brand a {
+  display: inline-block;
+  width: 120px;
+  height: 36px;
+  background-image: url('/icons/dmart-logo.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+  text-indent: -9999px;
+  overflow: hidden;
 }
 
 /* sections */

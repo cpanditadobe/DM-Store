@@ -5,15 +5,35 @@
 
 .hero {
   position: relative;
+  display: flex;
+  align-items: flex-end;
   padding: 40px 24px;
   min-height: 300px;
 }
 
 .hero h1 {
+  position: relative;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 20px;
+  border-left: 6px solid var(--brand-accent);
   color: var(--background-color);
+}
+
+/* green brand tint over the hero image for legibility + branding */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to top,
+    rgb(4 109 56 / 78%) 0%,
+    rgb(4 109 56 / 30%) 45%,
+    rgb(4 109 56 / 5%) 100%
+  );
+  pointer-events: none;
 }
 
 .hero picture {
