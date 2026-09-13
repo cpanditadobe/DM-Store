@@ -24,6 +24,8 @@ footer .footer p {
 
 @media (width >= 900px) {
   footer .footer > div {
+    max-width: 90%;
+    box-sizing: border-box;
     padding: 40px 32px 24px;
   }
 }
