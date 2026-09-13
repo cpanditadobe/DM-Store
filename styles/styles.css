@@ -11,13 +11,18 @@
  */
 
 :root {
-  /* colors */
+  /* colors — DMart brand palette */
   --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  --light-color: #f2f5f4;
+  --dark-color: #374553;
+  --text-color: #212121;
+  --link-color: #046d38;
+  --link-hover-color: #035a2d;
+
+  /* brand accents */
+  --brand-primary: #046d38;
+  --brand-accent: #46bc5b;
+  --brand-slate: #374553;
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
@@ -119,6 +124,12 @@ h4 { font-size: var(--heading-font-size-m); }
 h5 { font-size: var(--heading-font-size-s); }
 h6 { font-size: var(--heading-font-size-xs); }
 
+/* DMart green section headings */
+main > .section h2,
+main > .section h3 {
+  color: var(--brand-primary);
+}
+
 p,
 dl,
 ol,
@@ -199,8 +210,8 @@ button.button:disabled {
 
 a.button.primary,
 button.button.primary {
-  border-color: var(--text-color);
-  background-color: var(--text-color);
+  border-color: var(--brand-primary);
+  background-color: var(--brand-primary);
   color: var(--background-color);
 }
 
@@ -208,9 +219,9 @@ a.button.primary:hover,
 a.button.primary:focus-visible,
 button.button.primary:hover,
 button.button.primary:focus-visible {
-  border-color: var(--dark-color);
-  background-color: var(--dark-color);
-  color: var(--light-color);
+  border-color: var(--link-hover-color);
+  background-color: var(--link-hover-color);
+  color: var(--background-color);
 }
 
 a.button.primary[aria-disabled="true"],
@@ -293,6 +304,14 @@ main img {
 .icon img {
   height: 100%;
   width: 100%;
+}
+
+/* full-width hero banner — first image of the first section */
+main > .section:first-of-type .default-content-wrapper > p:first-child picture,
+main > .section:first-of-type .default-content-wrapper > p:first-child img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* sections */

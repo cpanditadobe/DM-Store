@@ -3,17 +3,35 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
+}
+
+@media (width >= 600px) {
+  .cards > ul {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
 }
 
 .cards > ul > li {
   border: 1px solid #dadada;
+  border-top: 3px solid var(--brand-primary);
   background-color: var(--background-color);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.cards > ul > li:hover {
+  border-top-color: var(--brand-accent);
+  box-shadow: 0 6px 18px rgb(4 109 56 / 15%);
+  transform: translateY(-4px);
 }
 
 .cards .cards-card-body {
   margin: 16px;
+}
+
+.cards .cards-card-body strong {
+  color: var(--brand-primary);
 }
 
 .cards .cards-card-image {
