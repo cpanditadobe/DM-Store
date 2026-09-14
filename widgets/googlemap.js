@@ -9,14 +9,17 @@ export default function decorate(widget) {
   const iframe = widget.querySelector('iframe');
   if (!iframe) return;
 
-  const { q, lat, lng, zoom } = widget.dataset;
+  const {
+    q, lat, lng, zoom, text,
+  } = widget.dataset;
   const z = zoom || '15';
 
   let src;
   if (lat && lng) {
     src = `https://maps.google.com/maps?q=${lat},${lng}&z=${z}&output=embed`;
   } else {
-    const query = q || 'DMart';
+    // prefer explicit q param, else fall back to the authored link text
+    const query = q || text || 'DMart';
     src = `https://maps.google.com/maps?q=${encodeURIComponent(query)}&z=${z}&output=embed`;
   }
 

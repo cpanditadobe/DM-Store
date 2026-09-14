@@ -35,6 +35,10 @@ function applyWidgetShell(widget, source, widgetName, searchParams) {
   widget.classList.add(widgetName);
   widget.classList.remove('block');
   widget.dataset.source = source.href;
+  // preserve the authored link text so widgets can use it as config
+  // (query params on the href do not always survive publishing)
+  const text = source.textContent.trim();
+  if (text) widget.dataset.text = text;
   searchParams.forEach((value, key) => {
     widget.dataset[key] = value;
   });
